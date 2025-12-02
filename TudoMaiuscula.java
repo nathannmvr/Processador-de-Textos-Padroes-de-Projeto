@@ -1,23 +1,15 @@
-public class TudoMaiuscula {
-    public static String converterTextoEmMaiusculo(String entrada) {
-        char[] caracteres = extrairCaracteres(entrada);
-        char[] caracateresAgoraMaisculos = converterCaracteresEmMaiusculo(caracteres);
-        String resultado = juntarCaractaresAgoraMaiusculo(caracateresAgoraMaisculos);
+public class TudoMaiuscula extends ConversorTexto {
+    public String converterTextoEmMaiusculo(String entrada) {
+        return converterTexto(entrada);
+    }
+
+    @Override
+    protected char[] transformarCaracteres(char[] chars) {
+        if (chars == null) return new char[0];
+        char[] resultado = new char[chars.length];
+        for (int i = 0; i < chars.length; i++) {
+            resultado[i] = Character.toUpperCase(chars[i]);
+        }
         return resultado;
-    }
-
-    private static char[] extrairCaracteres(String texto) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    private static char[] converterCaracteresEmMaiusculo(char[] chars) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    private static String juntarCaractaresAgoraMaiusculo(char[] chars) {
-        // TODO Auto-generated method stub
-        return null;
     }
 }
